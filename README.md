@@ -1,5 +1,9 @@
 # dnd5e-dice-roller
 
+[![npm](https://img.shields.io/badge/npm-dnd5e--dice--roller-green?style=flat-square)](https://www.npmjs.com/package/dnd5e-dice-roller)
+[![Version](https://img.shields.io/npm/v/dnd5e-dice-roller?label=version&style=flat-square)](https://www.npmjs.com/package/bulk-mail-cli)
+![NPM License](https://img.shields.io/npm/l/dnd5e-dice-roller)
+
 Generate dice rolls based on standard trpg dice string.
 
 For example:
