@@ -1,0 +1,27 @@
+{
+  "name": "rpg-dice-roller",
+  "version": "0.0.1",
+  "description": "Rolls dice according to RPG dice notation (e.g. 1d4, d6, 2d6+5, 1d20-1)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "keywords": [
+    "dice",
+    "die",
+    "rpg",
+    "roll",
+    "d&d",
+    "dnd",
+    "diceroll"
+  ],
+  "author": "mitchb09",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  }
+}
