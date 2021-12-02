@@ -1,6 +1,6 @@
 {
   "name": "dnd5e-dice-roller",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Rolls dice according to RPG dice notation (e.g. 1d4, d6, 2d6+5, 1d20-1)",
   "main": "index.ts",
   "types": "./index.d.ts",
