@@ -1,6 +1,6 @@
 {
-  "name": "hello-this-is-a-new-dice-roller",
-  "version": "1.0.0",
+  "name": "dnd5e-dice-roller",
+  "version": "0.0.1",
   "description": "Rolls dice according to RPG dice notation (e.g. 1d4, d6, 2d6+5, 1d20-1)",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,5 @@
     "jest": "^27.4.3",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2"
-  },
-  "dependencies": {
-    "np": "^7.6.0"
   }
 }
