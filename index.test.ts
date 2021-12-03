@@ -1,8 +1,8 @@
-import diceRoll from "./index";
+import diceRoller from "./index";
 
 const rollEm = (diceStr: string, expectedMin: number, expectedMax: number) => {
   for (let i = 0; i < 100; i++) {
-    const roll = diceRoll(diceStr);
+    const roll = diceRoller(diceStr);
     expect(roll).toBeGreaterThanOrEqual(expectedMin);
     expect(roll).toBeLessThanOrEqual(expectedMax);
   }
@@ -54,6 +54,6 @@ describe("Rolls dice with expected results", () => {
   });
 
   it("expects invalid string to throw error", () => {
-    expect(() => diceRoll("Invalid+1")).toThrow("Unable to parse dice roll");
+    expect(() => diceRoller("Invalid+1")).toThrow("Unable to parse dice roll");
   });
 });
