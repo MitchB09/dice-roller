@@ -3,8 +3,8 @@ import diceRoller from "./index";
 const rollEm = (diceStr: string, expectedMin: number, expectedMax: number) => {
   for (let i = 0; i < 100; i++) {
     const roll = diceRoller(diceStr);
-    expect(roll).toBeGreaterThanOrEqual(expectedMin);
-    expect(roll).toBeLessThanOrEqual(expectedMax);
+    expect(roll.getTotal()).toBeGreaterThanOrEqual(expectedMin);
+    expect(roll.getTotal()).toBeLessThanOrEqual(expectedMax);
   }
 };
 
@@ -13,15 +13,15 @@ describe("Rolls dice with expected results", () => {
     rollEm("1d4", 1, 4);
   });
 
-  it("expects 1d6 to be between 1 and 4", () => {
+  it("expects 1d6 to be between 1 and 6", () => {
     rollEm("1d6", 1, 6);
   });
 
-  it("expects 1d8 to be between 1 and 4", () => {
+  it("expects 1d8 to be between 1 and 8", () => {
     rollEm("1d8", 1, 8);
   });
 
-  it("expects 1d12 to be between 1 and 4", () => {
+  it("expects 1d12 to be between 1 and 12", () => {
     rollEm("1d12", 1, 12);
   });
 
@@ -29,15 +29,15 @@ describe("Rolls dice with expected results", () => {
     rollEm("d4", 1, 4);
   });
 
-  it("expects d6 to be between 1 and 4", () => {
+  it("expects d6 to be between 1 and 6", () => {
     rollEm("d6", 1, 6);
   });
 
-  it("expects d8 to be between 1 and 4", () => {
+  it("expects d8 to be between 1 and 8", () => {
     rollEm("d8", 1, 8);
   });
 
-  it("expects d12 to be between 1 and 4", () => {
+  it("expects d12 to be between 1 and 12", () => {
     rollEm("d12", 1, 12);
   });
 
@@ -51,6 +51,22 @@ describe("Rolls dice with expected results", () => {
 
   it("expects 3d100 to be between 3 and 300", () => {
     rollEm("3d100", 3, 300);
+  });
+
+  it("expects 4d6dl1 to be between 3 and 18", () => {
+    rollEm("4d6dl1", 3, 18);
+  });
+
+  it("expects 4d6dh1 to be between 3 and 18", () => {
+    rollEm("4d6dl1", 3, 18);
+  });
+
+  it("expects 4d6dl1+2 to be between 5 and 20", () => {
+    rollEm("4d6dl1+2", 5, 20);
+  });
+
+  it("expects 4d6dh1-1 to be between 1 and 16", () => {
+    rollEm("4d6dl1-1", 2, 17);
   });
 
   it("expects invalid string to throw error", () => {
