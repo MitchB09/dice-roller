@@ -36,9 +36,9 @@ const diceRoller = (rollStr: string): RollResult => {
 
 const addModifier = (rollResult: RollResult, modifier: string) => {
   if (modifier.substring(0, 1) === "+") {
-    rollResult.setTotal(rollResult.getTotal() + +modifier.substring(1));
+    rollResult.setTotal(rollResult.total + +modifier.substring(1));
   } else if (modifier.substring(0, 1) === "-") {
-    rollResult.setTotal(rollResult.getTotal() - +modifier.substring(1));
+    rollResult.setTotal(rollResult.total - +modifier.substring(1));
   }
 }
 

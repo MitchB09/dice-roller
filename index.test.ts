@@ -3,8 +3,8 @@ import diceRoller from "./index";
 const rollEm = (diceStr: string, expectedMin: number, expectedMax: number) => {
   for (let i = 0; i < 100; i++) {
     const roll = diceRoller(diceStr);
-    expect(roll.getTotal()).toBeGreaterThanOrEqual(expectedMin);
-    expect(roll.getTotal()).toBeLessThanOrEqual(expectedMax);
+    expect(roll.total).toBeGreaterThanOrEqual(expectedMin);
+    expect(roll.total).toBeLessThanOrEqual(expectedMax);
   }
 };
 
