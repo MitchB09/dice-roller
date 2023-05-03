@@ -13,7 +13,7 @@ const diceRoll = (numDice: number, die: number): number[] => {
   return rolls;
 };
 
-const diceRoller = (rollStr: string): RollResult => {
+export const diceRoller = (rollStr: string): RollResult => {
   const parsedRollStr = /(?<num>\d*)[d](?<die>\d+)(?<drop>d[h|l]\d+)?(?<mod>[-|\+]\d+)?/.exec(rollStr);
   if (parsedRollStr && parsedRollStr.groups?.die) {
     const numDice = parsedRollStr.groups?.num ? +parsedRollStr.groups?.num : 1;
@@ -29,10 +29,15 @@ const diceRoller = (rollStr: string): RollResult => {
     if (modifier) {
       addModifier(rollResult, modifier);
     }
+
     return rollResult;
   }
   throw "Unable to parse dice roll";
 };
+
+export const roll = (rollStr: string): number => {
+  return diceRoller(rollStr).total;
+}
 
 const addModifier = (rollResult: RollResult, modifier: string) => {
   if (modifier.substring(0, 1) === "+") {
@@ -61,7 +66,5 @@ const dropLowestHighest = (rollResult: RollResult, drop: string) => {
     rollResult.setTotal(sum(numbers));
   }
 }
-
-
 
 export default diceRoller;

@@ -18,3 +18,20 @@ For example:s
 - 4d6dl1 - 4 rolls of a 6 sided dice, dropping the lowest. Returns a result between 3 and 18
 - 2d20dh1 - 2 rolls of a 20 sided dice, dropping the lowest. (i.e. Rolling with disadvantage)
 - 2d20d1+3 - 2 rolls of a 20 sided dice, dropping the lowest, plus 3. (i.e. Rolling with advantage with a modifier)
+
+## Usage
+
+Default export returns the total and the the rolls of each die
+```javascript
+import diceRoller  from 'dnd5e-dice-roller';
+
+diceRoller("2d8+3"); // Returns { total: 17, rolls: [8, 6], rollStr: "2d8+3"  }
+```
+
+Named exports of `diceRoller` (behaves the same as the default) and `roll` to just return the total
+```javascript
+import { diceRoller, roll }  from 'dnd5e-dice-roller';
+
+diceRoller("2d8+3"); // Returns { total: 17, rolls: [8, 6], rollStr: "2d8+3"  }
+roll("2d8+3"); // Returns 17
+```

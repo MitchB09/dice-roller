@@ -1,10 +1,14 @@
-import diceRoller from "./index";
+import { roll, diceRoller } from "./index";
 
 const rollEm = (diceStr: string, expectedMin: number, expectedMax: number) => {
   for (let i = 0; i < 100; i++) {
-    const roll = diceRoller(diceStr);
-    expect(roll.total).toBeGreaterThanOrEqual(expectedMin);
-    expect(roll.total).toBeLessThanOrEqual(expectedMax);
+    const complexRoll = diceRoller(diceStr);
+    expect(complexRoll.total).toBeGreaterThanOrEqual(expectedMin);
+    expect(complexRoll.total).toBeLessThanOrEqual(expectedMax);
+
+    const simpleRoll = roll(diceStr)
+    expect(simpleRoll).toBeGreaterThanOrEqual(expectedMin);
+    expect(simpleRoll).toBeLessThanOrEqual(expectedMax);
   }
 };
 
